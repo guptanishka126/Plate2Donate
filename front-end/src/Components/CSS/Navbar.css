@@ -1,0 +1,136 @@
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-image {
+    width: 50px; /* Adjust width according to your needs */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+
+  
+  /* Basic styles for the navbar */
+  .navbar {
+    width: 100%;
+    background-color: #f8f9fa; /* Light background color */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Smooth transition for collapsing/expanding */
+    box-sizing: border-box; 
+  }
+  /* .navbar .navbar-list h2{
+    ;
+  } */
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+  .navbar-logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .navbar-list {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-list li {
+    margin: 0 15px;
+  }
+  
+  .navbar-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .navbar-list li a:hover {
+    color: #007bff;
+  }
+  
+  /* Hamburger Menu Style */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Collapsed Navbar */
+  .collapsed {
+    padding: 5px 20px;
+  }
+  
+  .collapsed .navbar-list {
+    display: none; /* Hide the list when collapsed */
+  }
+  
+  .collapsed .hamburger-menu {
+    display: flex; /* Show hamburger menu when collapsed */
+  }
+  
+  /* Show hidden list when hamburger menu is clicked */
+  .hidden {
+    display: none;
+  }
+  
+  .hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Responsive: At smaller screens, hide the full navbar list by default */
+  @media (max-width: 768px) {
+    .navbar-list {
+      display: none;
+    }
+  
+    .hamburger-menu {
+      display: flex; /* Show hamburger menu on small screens */
+    }
+  
+    .navbar-list li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .navbar-list {
+      position: absolute;
+      top: 50px;
+      right: 0; /* Align it to the right edge of the viewport */
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
